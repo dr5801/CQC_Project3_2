@@ -25,7 +25,7 @@ public class ConvertingMachine
 			new Edge(State.INTEGER, new PeriodInputVerifier(),
 					new StartFraction(), State.DECIMAL),
 			new Edge(State.DECIMAL, new DigitInputVerifier(),
-					new ContinuingFactionAction(), State.DECIMAL)
+					new ContinuingFractionAction(), State.DECIMAL)
 
 	};
 
