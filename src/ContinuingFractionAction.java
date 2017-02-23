@@ -19,5 +19,4 @@ public class ContinuingFractionAction implements Action {
 		
 		return interimResult;
 	}
-
 }
