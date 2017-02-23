@@ -34,11 +34,11 @@ public class InterimResult
 	 * Copy Constructor
 	 * @param x the object we want to copy
 	 */
-	public InterimResult(InterimResult x)
+	public InterimResult(InterimResult result)
 	{
-		p = x.p;
-		s = x.s;
-		v = x.v;
+		p = result.p;
+		s = result.s;
+		v = result.v;
 	}
 	
 	/**
