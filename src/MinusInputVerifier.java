@@ -13,7 +13,8 @@ public class MinusInputVerifier implements InputVerifier
 	@Override
 	public boolean meetsCriteria(char input) 
 	{
-		return (input == '-');
+		boolean isMinus = (input == '-');
+		return isMinus;
 	}
 
 }
