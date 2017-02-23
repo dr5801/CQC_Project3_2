@@ -29,14 +29,45 @@ public class ConvertingMachine
 
 	};
 
+	/**
+	 * parses the string of text for the state machine 
+	 * 
+	 * @param text
+	 * @return
+	 */
 	public double parse(String text)
 	{
+		State currentState = State.START;
+		InterimResult interimResult = new InterimResult(0,1,0);
 		
+		for(char character : text.toCharArray())
+		{
+			Edge nextEdge = searchForEdge(currentState, character);
+			
+			interimResult = nextEdge.action.execute(interimResult, character);
+			
+			if(nextEdge != null)
+			{
+				currentState = nextEdge.nextState;
+			}
+		}
+		
+		return interimResult.getS() * interimResult.getV();
 	}
 
-	private Edge searchForEdge(State currentState, char ch)
+	private Edge searchForEdge(State currentState, char character)
 	{
+		Edge nextEdge = null;
 		
+		for(Edge edge : machine)
+		{
+			if(edge.currentState == currentState && edge.inputVerifier.meetsCriteria(character))
+			{
+				nextEdge = edge;
+			}
+		}
+		
+		return nextEdge;
 	}
 
 	private class Edge
