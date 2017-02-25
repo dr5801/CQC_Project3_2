@@ -14,7 +14,7 @@ public class StartFraction implements Action {
 	{
 		InterimResult interimResult = new InterimResult(result);
 		interimResult.setP(0.1);
-		return result;
+		return interimResult;
 	}
 
 }

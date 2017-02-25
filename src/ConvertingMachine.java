@@ -33,7 +33,7 @@ public class ConvertingMachine
 	 * parses the string of text for the state machine 
 	 * 
 	 * @param text
-	 * @return
+	 * @return the final result
 	 */
 	public double parse(String text)
 	{
@@ -57,6 +57,13 @@ public class ConvertingMachine
 		return finalResult;
 	}
 
+	/**
+	 * search for the next edge by the given paramters 
+	 * 
+	 * @param currentState - the current state of the system
+	 * @param character - the character that is inputted
+	 * @return the next state
+	 */
 	private Edge searchForEdge(State currentState, char character)
 	{
 		Edge nextEdge = null;
@@ -77,6 +84,9 @@ public class ConvertingMachine
 		return nextEdge;
 	}
 
+	/**
+	 * An Edge that stores the currentState, inputVerifier, an action and the nextState
+	 */
 	private class Edge
 	{
 		State currentState;
