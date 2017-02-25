@@ -15,7 +15,7 @@ public class ContinuingIntegerAction implements Action
 	public InterimResult execute(InterimResult result, char input) 
 	{
 		InterimResult interimResult = new InterimResult(result);
-		result.setV(10 * result.getV() + Character.getNumericValue(input));
+		interimResult.setV(10 * result.getV() + Character.getNumericValue(input));
 		return interimResult;
 	}
 
