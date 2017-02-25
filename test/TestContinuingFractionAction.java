@@ -6,7 +6,7 @@ import org.junit.Test;
  * 
  * tests the functionality of ContinuingFractionActing class
  */
-public class TestContinuingActionFraction 
+public class TestContinuingFractionAction
 {
 	/**
 	 * tests a non-zero input
@@ -25,7 +25,7 @@ public class TestContinuingActionFraction
 	 * tests zero input
 	 */
 	@Test
-	public void testZeroInput()
+	public void testZeroAsInput()
 	{
 		Action continuingFractionAction = new ContinuingFractionAction();
 		InterimResult interimResult = new InterimResult(0.01, 1, 1);

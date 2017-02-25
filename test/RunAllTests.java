@@ -10,6 +10,7 @@ import org.junit.runners.Suite;
 		{
 			InterimResultTest.class,
 			ConvertingMachineTest.class,
-			TestContinuingActionFraction.class
+			TestContinuingFractionAction.class,
+			TestContinuingIntegerAction.class
 		})
 public class RunAllTests {}
