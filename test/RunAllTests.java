@@ -12,6 +12,7 @@ import org.junit.runners.Suite;
 			ConvertingMachineTest.class,
 			TestContinuingFractionAction.class,
 			TestContinuingIntegerAction.class,
-			TestDigitInputVerifier.class
+			TestDigitInputVerifier.class,
+			TestMinusInputVerifier.class
 		})
 public class RunAllTests {}

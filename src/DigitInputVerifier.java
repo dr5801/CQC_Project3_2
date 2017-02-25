@@ -16,5 +16,4 @@ public class DigitInputVerifier implements InputVerifier
 	{
 		return Character.isDigit(c);
 	}
-
 }

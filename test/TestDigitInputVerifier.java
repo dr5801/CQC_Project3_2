@@ -37,4 +37,24 @@ public class TestDigitInputVerifier
 		DigitInputVerifier digitVerifier = new DigitInputVerifier();
 		assertFalse(digitVerifier.meetsCriteria('a'));
 	}
+	
+	/**
+	 * tests invalid input as plus sign
+	 */
+	@Test
+	public void testInvalidInputAsPlusSign()
+	{
+		DigitInputVerifier digitVerifier = new DigitInputVerifier();
+		assertFalse(digitVerifier.meetsCriteria('+'));
+	}
+	
+	/**
+	 * tests invalid input as minus sign
+	 */
+	@Test
+	public void testInvalidInputAsMinusSign()
+	{
+		DigitInputVerifier digitVerifier = new DigitInputVerifier();
+		assertFalse(digitVerifier.meetsCriteria('-'));
+	}
 }
