@@ -52,7 +52,9 @@ public class ConvertingMachine
 			}
 		}
 		
-		return interimResult.getS() * interimResult.getV();
+		double finalResult = interimResult.getS() * interimResult.getV();
+		
+		return finalResult;
 	}
 
 	private Edge searchForEdge(State currentState, char character)
@@ -65,6 +67,11 @@ public class ConvertingMachine
 			{
 				nextEdge = edge;
 			}
+		}
+		
+		if(nextEdge == null)
+		{
+			throw new NumberFormatException();
 		}
 		
 		return nextEdge;
