@@ -14,6 +14,7 @@ public class Runner {
 		String input = scanner.nextLine();
 		
 		ConvertingMachine convertingMachine = new ConvertingMachine();
+		
 		System.out.println(convertingMachine.parse(input));
 	}
 }
