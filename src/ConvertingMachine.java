@@ -26,7 +26,6 @@ public class ConvertingMachine
 					new StartFraction(), State.DECIMAL),
 			new Edge(State.DECIMAL, new DigitInputVerifier(),
 					new ContinuingFractionAction(), State.DECIMAL)
-
 	};
 
 	/**

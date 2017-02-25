@@ -11,6 +11,7 @@ import org.junit.runners.Suite;
 			InterimResultTest.class,
 			ConvertingMachineTest.class,
 			TestContinuingFractionAction.class,
-			TestContinuingIntegerAction.class
+			TestContinuingIntegerAction.class,
+			TestDigitInputVerifier.class
 		})
 public class RunAllTests {}

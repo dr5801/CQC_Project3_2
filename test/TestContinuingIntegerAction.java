@@ -9,6 +9,9 @@ import org.junit.Test;
  */
 public class TestContinuingIntegerAction 
 {
+	/**
+	 * Tests a non zero input
+	 */
 	@Test
 	public void testNonZeroInput()
 	{
@@ -19,6 +22,9 @@ public class TestContinuingIntegerAction
 		assertEquals(115, interimResult.getV(), 0.0001);
 	}
 	
+	/**
+	 * tests a zero as input
+	 */
 	@Test
 	public void testZeroAsInput()
 	{
