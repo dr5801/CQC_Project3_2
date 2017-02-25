@@ -13,6 +13,7 @@ import org.junit.runners.Suite;
 			TestContinuingFractionAction.class,
 			TestContinuingIntegerAction.class,
 			TestDigitInputVerifier.class,
-			TestMinusInputVerifier.class
+			TestMinusInputVerifier.class,
+			TestNegateAction.class
 		})
 public class RunAllTests {}
