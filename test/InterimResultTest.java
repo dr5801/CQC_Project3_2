@@ -26,7 +26,6 @@ public class InterimResultTest
 		InterimResult x = new InterimResult(1, 2, 3.4);
 		InterimResult y = new InterimResult(x);
 		assertEquals(y, x);
-
 	}
 
 }
