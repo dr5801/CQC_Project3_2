@@ -16,6 +16,7 @@ import org.junit.runners.Suite;
 			TestMinusInputVerifier.class,
 			TestNegateAction.class,
 			TestNoAction.class,
-			TestPeriodInputVerifier.class
+			TestPeriodInputVerifier.class,
+			TestPlusInputVerifier.class
 		})
 public class RunAllTests {}
