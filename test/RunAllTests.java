@@ -17,6 +17,8 @@ import org.junit.runners.Suite;
 			TestNegateAction.class,
 			TestNoAction.class,
 			TestPeriodInputVerifier.class,
-			TestPlusInputVerifier.class
+			TestPlusInputVerifier.class,
+			TestStartFraction.class,
+			TestValueIsDigitAction.class
 		})
 public class RunAllTests {}

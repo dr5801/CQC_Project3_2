@@ -17,7 +17,15 @@ public class TestNoAction
 		Action noAction = new NoAction();
 		InterimResult interimResult = new InterimResult(0, 1, 0);
 		
+		assertEquals(0, interimResult.getP(), 0.0001);
+		assertEquals(1, interimResult.getS());
+		assertEquals(0, interimResult.getV(), 0.0001);
+		
 		/* NoAction just returns the InterimResult passed in without changing values so it should equal */
-		assertEquals(interimResult, noAction.execute(interimResult, '+'));
+		interimResult = noAction.execute(interimResult, '+');
+		
+		assertEquals(0, interimResult.getP(), 0.0001);
+		assertEquals(1, interimResult.getS());
+		assertEquals(0, interimResult.getV(), 0.0001);
 	}
 }
