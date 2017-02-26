@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 /**
@@ -15,6 +17,9 @@ public class Runner {
 		
 		ConvertingMachine convertingMachine = new ConvertingMachine();
 		
-		System.out.println(convertingMachine.parse(input));
+		double finalResult = convertingMachine.parse(input);
+		
+		NumberFormat formatter = new DecimalFormat("#0.000");
+		System.out.println(formatter.format(finalResult));
 	}
 }
