@@ -8,24 +8,55 @@
  *
  */
 public class ConvertingMachine
-{
-
+{	
+	
+	InputVerifier digitInputVerifier = (char c) ->  Character.isDigit(c);
+	InputVerifier minusInputVerifier = (char c) -> c == '-';
+	InputVerifier plusInputVerifier = (char c) -> c == '+';
+	InputVerifier periodInputVerifier = (char c) -> c == '.';
+	
+	Action noAction = (InterimResult result, char input) -> result;
+	Action valueIsDigitAction = (InterimResult result, char input) -> { 
+		InterimResult interimResult = new InterimResult(result);
+		interimResult.setV(Character.getNumericValue(input));
+		return interimResult;
+	};
+	
+	Action negateAction = (InterimResult result, char input) -> {
+		InterimResult interimResult = new InterimResult(result);
+		interimResult.setS(-1);
+		return interimResult;
+	};
+	
+	Action startFraction = (InterimResult result, char input) -> {
+		InterimResult interimResult = new InterimResult(result);
+		interimResult.setP(0.1);
+		return interimResult;
+	};
+	 
+	Action continuingIntegerAction = (InterimResult result, char input) -> {
+		InterimResult interimResult = new InterimResult(result);
+		interimResult.setV(10 * result.getV() + Character.getNumericValue(input));
+		return interimResult;
+	};
+	
+	Action continuinFractionAction = (InterimResult result, char input) -> {
+		InterimResult interimResult = new InterimResult(result);
+		double value = interimResult.getP() * Character.getNumericValue(input);
+		interimResult.setV(interimResult.getV() + value);
+		interimResult.setP(interimResult.getP() / 10);
+		return interimResult;
+	};
+	
 	private final Edge[] machine =
 	{
-			new Edge(State.START, new DigitInputVerifier(),
-					new ValueIsDigitAction(), State.INTEGER),
-			new Edge(State.START, new MinusInputVerifier(), new NegateAction(),
-					State.INTEGER),
-			new Edge(State.START, new PlusInputVerifier(), new NoAction(),
-					State.INTEGER),
-			new Edge(State.START, new PeriodInputVerifier(),
-					new StartFraction(), State.DECIMAL),
-			new Edge(State.INTEGER, new DigitInputVerifier(),
-					new ContinuingIntegerAction(), State.INTEGER),
-			new Edge(State.INTEGER, new PeriodInputVerifier(),
-					new StartFraction(), State.DECIMAL),
-			new Edge(State.DECIMAL, new DigitInputVerifier(),
-					new ContinuingFractionAction(), State.DECIMAL)
+			new Edge(State.START, digitInputVerifier, valueIsDigitAction, State.INTEGER),
+			new Edge(State.START, minusInputVerifier, negateAction, State.INTEGER),
+			new Edge(State.START, plusInputVerifier, noAction, State.INTEGER),
+			new Edge(State.START, periodInputVerifier, startFraction, State.DECIMAL),
+			new Edge(State.INTEGER, digitInputVerifier, continuingIntegerAction, State.INTEGER),
+			new Edge(State.INTEGER, periodInputVerifier, startFraction, State.DECIMAL),
+			new Edge(State.DECIMAL, digitInputVerifier, continuinFractionAction, State.DECIMAL)
 	};
 
 	/**
